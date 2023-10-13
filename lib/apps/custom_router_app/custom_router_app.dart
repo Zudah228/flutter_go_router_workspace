@@ -27,6 +27,10 @@ class CustomRouterDelegate extends RouterDelegate<Object> {
         MaterialPage(child: CToBuyPage()),
       ],
       onPopPage: (route, result) {
+        if (!route.didPop(result)) {
+          return false;
+        }
+
         return true;
       },
     );
